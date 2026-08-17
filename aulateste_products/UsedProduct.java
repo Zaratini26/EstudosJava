@@ -1,0 +1,35 @@
+package aulateste_products;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class UsedProduct extends Product{
+    DateTimeFormatter fmt01 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    // Attributes
+    private LocalDate manufactureDate;
+
+    // Constructors
+    public UsedProduct() {}
+
+    public UsedProduct(String name, Double price, LocalDate manufactureDate) {
+        super(name, price);
+        this.manufactureDate = manufactureDate;
+    }
+
+    // Getters and Setters
+    public LocalDate getManufactureDate() {
+        return manufactureDate;
+    }
+
+    public void setManufactureDate(LocalDate manufactureDate) {
+        this.manufactureDate = manufactureDate;
+    }
+
+    // Methods
+    @Override
+    public String priceTag() {
+        return getName() + " (used) $ " + String.format("%.2f", getPrice()) +
+        " (Manufacture date: " + fmt01.format(getManufactureDate()) + ")";
+    }
+}

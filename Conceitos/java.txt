@@ -1,0 +1,42 @@
+O JavaC (Java Compiler) vai transformar o Código Fonte Java em Bytecode,
+um código específico que vai executar em uma Máquina Virtual Java (Java Virtual Machine - JVM).
+
+Uma JVM é uma solução de software capaz de executar bytecode em qualquer máquina,
+independente da plataforma que o Código Fonte foi compilado. Java é multiplataforma sem a necessidade de recompilação.
+
+A JVM é composta por várias partes internas, como por exemplo Loader, Verificador, Interpretador, Gerenciador de Memória e Compilador JIT (Just in Time).
+
+Atualmente existem JVMs em várias plataformas, como Computadores Pessoais (Windows, Linux, MacOS), dispositivos móveis (Android)
+e até mesmo os modernos wireless (relógios inteligentes, óculos inteligentes).
+
+O princípio de funcionamento desse mecanismo explicado acima é conhecido pela sigla WORA (Write Once Run Anywhere) que significa “Escreva uma vez,
+execute em qualquer lugar”.
+
+JRE (Java Runtime Environment) é um conjunto de software que forma um ambiente para a execução de bytecodes feitos em Java.
+Ela é composta da JVM e bibliotecas adicionais.
+
+JDK (Java Development Kit) é um conjunto de programas que todo programador Java deve ter.
+Ele é um kit de desenvolvimento Java composto pela JRE (item acima), o JavaLang, o JavaTools (JavaC, Debugger, APIs).
+Além disso, você ainda pode adicionar uma IDE para facilitar o desenvolvimento Java.
+
+As IDEs mais conhecidas são o Eclipse, o IntelliJ e o NetBeans.
+
+Edições do Java
+
+Java SE (Standard Edition) é usado para o desenvolvimento da maioria das aplicações que você vai criar em Java.
+Java EE (Enterprise Edition) usado para aplicações maiores, com acesso a servidores, grandes bases de dados, etc.
+Java ME (Micro Edition) é usado para o desenvolvimento de aplicativos voltados para dispositivos móveis.
+--------------------------------------------------------------------------------------------
+Os Aplicativos Java são compostos por pacotes. Cada pacote pode ter várias Classes. Cada classe possui um ou mais Atributos e Métodos.
+
+Regras para nomeação de componentes (CamelCase) 
+
+A nomeação de Pacotes Java será feita com todas as letras minúsculas. 
+
+Os nomes de Classes começam sempre com uma letra maiúscula
+
+Usamos a primeira letra minúsculas para Atributos, Variáveis e Métodos.
+
+As Constantes possuem todas as letras maiúsculas.
+
+
