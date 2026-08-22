@@ -13,7 +13,7 @@ public class RentalService {
 
     public RentalService(Double pricePerHour, Double pricePerDay, TaxService taxService) {
         this.pricePerHour = pricePerHour;
-        PricePerDay = pricePerDay;
+        this.PricePerDay = pricePerDay;
         this.taxService = taxService;
     }
 
