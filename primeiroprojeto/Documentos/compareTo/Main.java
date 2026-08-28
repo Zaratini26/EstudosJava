@@ -1,4 +1,4 @@
-package primeiroprojeto;
+package primeiroprojeto.Documentos.compareTo;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,20 +10,21 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        List<String> names = new ArrayList<>();
+        List<Employee> names = new ArrayList<>();
 
         String path = "C:\\AMD\\in.txt";
 
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-            String linha = br.readLine();
+            String employeeCsv = br.readLine();
 
-            while (linha != null) {
-                names.add(linha);
-                linha = br.readLine();
+            while (employeeCsv != null) {
+                String[] fields = employeeCsv.split(",");
+                names.add(new Employee(fields[0], Double.parseDouble(fields[1])));
+                employeeCsv = br.readLine();
             }
             Collections.sort(names);
-            for (String nome : names) {
-                System.out.println(nome);
+            for (Employee nome : names) {
+                System.out.println(nome.getName() +  ", " + nome.getSalary());
             }
         }
         catch (IOException e) {
