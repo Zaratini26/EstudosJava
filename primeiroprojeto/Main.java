@@ -1,30 +1,36 @@
 package primeiroprojeto;
 
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-       int[][] numbers = new int[3][3];
 
-        numbers[0][0] = 1;
-        numbers[0][1] = 2;
-        numbers[0][2] = 3;
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        numbers[1][0] = 4;
-        numbers[1][1] = 5;
-        numbers[1][2] = 6;
+        Map<String, LocalDate> birthDates = new HashMap<>();
 
-        numbers[2][0] = 7;
-        numbers[2][1] = 8;
-        numbers[2][2] = 9;
+        birthDates.put("Felipe", LocalDate.parse("26/11/1999", fmt));
+        birthDates.put("Lucas", LocalDate.parse("12/02/2000", fmt));
 
-        for (int[] base : numbers) {
-            for (int n : base) {
-                System.out.print(n +  " ");
-            }
-            System.out.println();
+        for (Map.Entry<String, LocalDate> entry : birthDates.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue().format(fmt));
         }
+
+        Iterator<Map.Entry<String, LocalDate>> i = birthDates.entrySet().iterator();
+
+        System.out.println();
+        while (i.hasNext()) {
+            Map.Entry<String, LocalDate> entry = i.next();
+            System.out.println(entry.getKey() + ": " + entry.getValue().format(fmt));
+        }
+
         sc.close();
     }
 }

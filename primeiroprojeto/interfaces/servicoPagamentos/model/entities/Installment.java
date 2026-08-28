@@ -1,8 +1,11 @@
 package primeiroprojeto.interfaces.servicoPagamentos.model.entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Installment {
+
+    private final DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     // Attributes
     private LocalDate dueDate;
@@ -27,5 +30,9 @@ public class Installment {
 
     public void setAmount(Double amount) {
         this.amount = amount;
+    }
+
+    public String toString() {
+        return getDueDate().format(fmt) + " - " + String.format("%.2f", amount);
     }
 }
