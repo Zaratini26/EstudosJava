@@ -17,5 +17,7 @@ public class RoutePath {
         System.out.println("Name: " + path.getName());
         System.out.println("Parent: " + path.getParent());
         System.out.println("Path: " + path.getPath());
+
+        sc.close();
     }
 }

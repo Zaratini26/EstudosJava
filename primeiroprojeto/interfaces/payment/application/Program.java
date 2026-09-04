@@ -23,5 +23,7 @@ public class Program {
 
         System.out.println("Payment after " +  months + " months:");
         System.out.printf("%.2f%n", payment);
+
+        sc.close();
     }
 }
