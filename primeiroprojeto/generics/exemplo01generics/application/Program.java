@@ -9,18 +9,20 @@ public class Program {
 
         Scanner sc = new Scanner(System.in);
 
-        PrintService ps = new PrintService();
+        PrintService<Integer> ps = new PrintService<>();
 
         System.out.print("How many values: ");
         int n = sc.nextInt();
 
         System.out.println("Enter the value:");
         for (int i = 0; i < n; i++) {
-            ps.addList(sc.nextInt());
+            int value = sc.nextInt();
+            ps.addList(value);
         }
 
         ps.print();
-        System.out.println("First: " + ps.first());
+        Integer x = ps.first();
+        System.out.println("First: " + x);
 
     }
 }

@@ -3,28 +3,28 @@ package primeiroprojeto.generics.exemplo01generics.services;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrintService {
+public class PrintService<T> {
 
-    private final List<Integer> numbers = new ArrayList<>();
+    private final List<T> list = new ArrayList<>();
 
-    public void addList(int number) {
-        numbers.add(number);
+    public void addList(T value) {
+        list.add(value);
     }
 
-    public Integer first() {
-        if (numbers.isEmpty()) {
+    public T first() {
+        if (list.isEmpty()) {
             throw new IllegalArgumentException("List is empty");
         }
-        return numbers.getFirst();
+        return list.getFirst();
     }
 
     public void print() {
         System.out.print("[");
-        if (!numbers.isEmpty()) {
-            System.out.print(numbers.getFirst());
+        if (!list.isEmpty()) {
+            System.out.print(list.getFirst());
         }
-        for (int i = 1; i < numbers.size(); i++) {
-            System.out.print(", " + numbers.get(i));
+        for (int i = 1; i < list.size(); i++) {
+            System.out.print(", " + list.get(i));
         }
         System.out.println("]");
     }
