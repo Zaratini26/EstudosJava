@@ -1,33 +1,23 @@
 package primeiroprojeto;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        List<String> names = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
 
-        String path = "C:\\AMD\\in.txt";
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-            String linha = br.readLine();
-
-            while (linha != null) {
-                names.add(linha);
-                linha = br.readLine();
-            }
-            Collections.sort(names);
-            for (String nome : names) {
-                System.out.println(nome);
-            }
+        if (n1 % n2 == 0 && n2 % n1 == 0) {
+            System.out.println("Sao Multiplos");
         }
-        catch (IOException e) {
-            System.out.println("ERROR: " + e.getMessage());
+        else {
+            System.out.println("Nao Sao Multiplos");
         }
+        sc.close();
     }
 }
